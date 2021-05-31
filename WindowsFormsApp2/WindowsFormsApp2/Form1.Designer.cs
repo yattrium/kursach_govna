@@ -118,6 +118,14 @@
             this.TB_AppInd = new System.Windows.Forms.TextBox();
             this.AcceptApplButt = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.comics_infoDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comics_infoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.saveButtMain = new System.Windows.Forms.Button();
             this.deleteButtMain = new System.Windows.Forms.Button();
             this.mainDataGridView = new System.Windows.Forms.DataGridView();
@@ -138,15 +146,7 @@
             this.applicationTableAdapter2 = new WindowsFormsApp2.mydbDataSetTableAdapters.applicationTableAdapter();
             this.applicationTableAdapter3 = new WindowsFormsApp2.mydbDataSetTableAdapters.applicationTableAdapter();
             this.genreTableAdapter = new WindowsFormsApp2.mydbDataSetTableAdapters.genreTableAdapter();
-            this.comics_infoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comics_infoTableAdapter = new WindowsFormsApp2.mydbDataSetTableAdapters.comics_infoTableAdapter();
-            this.comics_infoDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.mydbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mydbDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mydbDataSetBindingSource1)).BeginInit();
@@ -158,12 +158,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comics_infoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comics_infoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comics_infoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comics_infoDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // mydbDataSet
@@ -1021,6 +1021,64 @@
             this.tabPage3.Text = "Записи";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // comics_infoDataGridView
+            // 
+            this.comics_infoDataGridView.AutoGenerateColumns = false;
+            this.comics_infoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.comics_infoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25,
+            this.dataGridViewTextBoxColumn26,
+            this.dataGridViewTextBoxColumn27,
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29});
+            this.comics_infoDataGridView.DataSource = this.comics_infoBindingSource;
+            this.comics_infoDataGridView.Location = new System.Drawing.Point(561, 403);
+            this.comics_infoDataGridView.Name = "comics_infoDataGridView";
+            this.comics_infoDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.comics_infoDataGridView.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "idComics_Info";
+            this.dataGridViewTextBoxColumn24.HeaderText = "idComics_Info";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "Comics_Info_short_description";
+            this.dataGridViewTextBoxColumn25.HeaderText = "Comics_Info_short_description";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "Comics_Info_Full_description";
+            this.dataGridViewTextBoxColumn26.HeaderText = "Comics_Info_Full_description";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "Comics_Info_year";
+            this.dataGridViewTextBoxColumn27.HeaderText = "Comics_Info_year";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "Comics_Info_pages";
+            this.dataGridViewTextBoxColumn28.HeaderText = "Comics_Info_pages";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "Comics_Info_License";
+            this.dataGridViewTextBoxColumn29.HeaderText = "Comics_Info_License";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            // 
+            // comics_infoBindingSource
+            // 
+            this.comics_infoBindingSource.DataMember = "comics_info";
+            this.comics_infoBindingSource.DataSource = this.mydbDataSet;
+            // 
             // saveButtMain
             // 
             this.saveButtMain.Location = new System.Drawing.Point(266, 331);
@@ -1159,67 +1217,9 @@
             // 
             this.genreTableAdapter.ClearBeforeFill = true;
             // 
-            // comics_infoBindingSource
-            // 
-            this.comics_infoBindingSource.DataMember = "comics_info";
-            this.comics_infoBindingSource.DataSource = this.mydbDataSet;
-            // 
             // comics_infoTableAdapter
             // 
             this.comics_infoTableAdapter.ClearBeforeFill = true;
-            // 
-            // comics_infoDataGridView
-            // 
-            this.comics_infoDataGridView.AutoGenerateColumns = false;
-            this.comics_infoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.comics_infoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29});
-            this.comics_infoDataGridView.DataSource = this.comics_infoBindingSource;
-            this.comics_infoDataGridView.Location = new System.Drawing.Point(561, 403);
-            this.comics_infoDataGridView.Name = "comics_infoDataGridView";
-            this.comics_infoDataGridView.Size = new System.Drawing.Size(300, 220);
-            this.comics_infoDataGridView.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "idComics_Info";
-            this.dataGridViewTextBoxColumn24.HeaderText = "idComics_Info";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "Comics_Info_short_description";
-            this.dataGridViewTextBoxColumn25.HeaderText = "Comics_Info_short_description";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "Comics_Info_Full_description";
-            this.dataGridViewTextBoxColumn26.HeaderText = "Comics_Info_Full_description";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "Comics_Info_year";
-            this.dataGridViewTextBoxColumn27.HeaderText = "Comics_Info_year";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "Comics_Info_pages";
-            this.dataGridViewTextBoxColumn28.HeaderText = "Comics_Info_pages";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "Comics_Info_License";
-            this.dataGridViewTextBoxColumn29.HeaderText = "Comics_Info_License";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
             // 
             // Form1
             // 
@@ -1245,12 +1245,12 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.comics_infoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comics_infoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comics_infoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comics_infoDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -31,6 +31,7 @@ namespace WindowsFormsApp2
             this.mainTableAdapter.Fill(this.mydbDataSet.main);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "mydbDataSet.application". При необходимости она может быть перемещена или удалена.
             this.applicationTableAdapter.Fill(this.mydbDataSet.application);
+
         }
 
         private void saveButton_Click(object sender, EventArgs e) // сохранение таблицы заявок
@@ -135,9 +136,6 @@ namespace WindowsFormsApp2
 
         }
 
-        // TB_AuthorsR - текстбокс для измененных данных
-
-
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -205,57 +203,12 @@ namespace WindowsFormsApp2
         private void AcceptApplButt_Click(object sender, EventArgs e)
         {
 
-            //DialogResult dr = MessageBox.Show("Сохранить запись? Будьте внимательны: данные сохранятся в главную таблицу, а зявка будет удалена.", "Сохранение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            //if (dr == DialogResult.OK)
-            //{
-
             try
             {
-
-            
-
             string connectionString = "server = localhost; user id = root; password = root; database = mydb; persistsecurityinfo = True";
             using (MySqlConnection connection = new MySqlConnection(connectionString))
-
-
             {
                 //------------------------------------------------------
-
-                /*  MySqlCommand commandTEST = connection.CreateCommand();
-
-                  string sql1 = "insert into cycle_of_works (Cycle_of_works_Name) Values(@Cycle_of_works_Name)";
-                  commandTEST.CommandText = sql1;
-                  commandTEST.Parameters.AddWithValue("Cycle_of_works_Name", TB_Cycle.Text);
-                  commandTEST.ExecuteNonQuery();
-                  //------------------------------------------------------
-
-                  MySqlCommand commandAuthor_Edit = connection.CreateCommand();
-                  MySqlCommand commandAuthor_Edit_Id = connection.CreateCommand();
-                  MySqlCommand commandAuthor_Edit_SELECT = connection.CreateCommand();
-
-
-
-                  string sql2 = "insert into authors_edit (Authors_Edit_Name) Values(@Authors_Edit_Name)";
-                  commandAuthor_Edit.CommandText = sql2;
-                  commandAuthor_Edit.Parameters.AddWithValue("Authors_Edit_Name", TB_Editor.Text);
-                 // string AaA = TB_Editor.Text.ToString();
-                  commandAuthor_Edit.ExecuteNonQuery();
-
-                  string sql3 = "select idAuthors_Edit form authors_edit where Authors_Edit_Name = '"+ TB_Editor.Text.ToString() + "' ";
-
-                  string sqlEd = "insert into authors_edit_has_authors (Authors_Edit_idAuthors_Edit, Authors_idAuthors) Values(@idAuthors_Edit, '1')";
-                //  string sqlEd2 = "insert into authors_edit_has_authors (Authors_idAuthors) Values('1')";
-
-
-
-                  commandAuthor_Edit_Id.CommandText = sqlEd;
-
-                  commandTEST.Parameters.AddWithValue("Authors_Edit_idAuthors_Edit", commandAuthor_Edit_SELECT.CommandText = sql3);
-                  commandAuthor_Edit.ExecuteNonQuery(); */
-
-                //------------------------------------------------------
-                //string License = "Нет лицензии";
-
                 connection.Open();
                 //------------------------ЗАПОЛНЕНИЕ ТАБЛИЦЫ КОМИКС ИНФО------------------------------------
                 MySqlCommand cmdInfo = connection.CreateCommand();
@@ -298,42 +251,97 @@ namespace WindowsFormsApp2
                     //}
 
                     // string sqlCycle = "Select COUNT(*) From cycle_of_works WHERE Cycle_of_works_Name = '" + TB_Cycle.Text + "' ";
-                  //  string sqlCycle = "SELECT * FROM cycle_of_works WHERE Cycle_of_works_Name = ' " + TB_Cycle.Text.ToString() + "'";
+                    //  string sqlCycle = "SELECT * FROM cycle_of_works WHERE Cycle_of_works_Name = ' " + TB_Cycle.Text.ToString() + "'";
 
                     //string sqlCycle = "SELECT * FROM cycle_of_works WHERE (Cycle_of_works_Name) Value (@Cycle_of_works_Name) ";
-                    string sqlCycle = "SELECT * FROM cycle_of_works WHERE Cycle_of_works_Name = 'Пиджаки и револьверы' ";
+                    //      string sqlCycle = "SELECT * FROM cycle_of_works WHERE NOT EXISTS Cycle_of_works_Name = ' " + TB_Cycle.Text.ToString() + "'";
+                    //string sqlCycle = "SELECT * FROM cycle_of_works WHERE NOT EXISTS Cycle_of_works_Name = ' " + TB_Cycle.Text.ToString() + " ' ";
 
 
-                    MySqlCommand cmdCycle = new MySqlCommand(sqlCycle, connection);
+                    //MySqlCommand cmdCycle = new MySqlCommand(sqlCycle, connection);
+                    ////   cmdCycle.Parameters.AddWithValue("Cycle_of_works_Name", TB_Cycle.Text);
+                    //bool i = (bool)cmdCycle.ExecuteScalar();
+
+                    //if (i == false)
+                    //{
+                    //    string sqlCycle2 = "INSERT INTO cycle_of_works (Cycle_of_works_Name) Values(@Cycle_of_works_Name)";
+                    //    MySqlCommand cmdCycle2 = new MySqlCommand(sqlCycle2, connection);
+
+                    //    cmdCycle.CommandText = sqlCycle2;
+                    //    cmdCycle.Parameters.AddWithValue("Cycle_of_works_Name", TB_Cycle.Text);
+                    //    cmdCycle.ExecuteNonQuery();
+                    //}
+
+                    //-----------------------------------------------------------------------------------
+                    //MySqlCommand cmdCycle1 = connection.CreateCommand();
+                    //MySqlCommand cmdCycle2 = connection.CreateCommand();
+                    //string sqlCycleFind = "SELECT COUNT(*) FROM cycle_of_works WHERE (Cycle_of_works_Name) Value(@Cycle_of_works_Name1)";
+                    //string sqlCycleAdd = "INSERT INTO cycle_of_works (Cycle_of_works_Name) Value(@Cycle_of_works_Name2)";
+                    //cmdCycle1.CommandText = sqlCycleFind;
+                    //cmdCycle1.Parameters.AddWithValue("Cycle_of_works_Name1", TB_Cycle.Text);
+                    //MySqlDataReader reader = cmdCycle1.ExecuteReader();
+
+                    //if (reader.Read())
+                    //{
+                    //    cmdCycle2.CommandText = sqlCycleAdd;
+                    //    cmdCycle2.Parameters.AddWithValue("Cycle_of_works_Name2", TB_Cycle.Text);
+                    //    cmdCycle2.ExecuteNonQuery();
+                    //}
+                    //------------------------------ДОБАВЛЕНИЕ В ТАБЛИЦУ ЦИКЛА-----------------------------------------------------
+                    MySqlCommand cmdCycle = connection.CreateCommand();
+                    string sqlCYCLE = "INSERT INTO cycle_of_works (Cycle_of_works_Name) Values(@Cycle_of_works_Name)";
+                    cmdCycle.CommandText = sqlCYCLE;
                     cmdCycle.Parameters.AddWithValue("Cycle_of_works_Name", TB_Cycle.Text);
-                    object result = cmdCycle.ExecuteScalar();                
+                    cmdCycle.ExecuteNonQuery();
 
-                    if (result == null)
-                    {
-                        string sqlCycle2 = "INSERT INTO cycle_of_works (Cycle_of_works_Name) Values(@Cycle_of_works_Name)";
-                        MySqlCommand cmdCycle2 = new MySqlCommand(sqlCycle2, connection);
-                        
-                          cmdCycle.CommandText = sqlCycle2;
-                          cmdCycle.Parameters.AddWithValue("Cycle_of_works_Name", TB_Cycle.Text);
-                          cmdCycle.ExecuteNonQuery();
-                    }
+                    //-------------------------------ПОЛУЧЕНИЕ АЙДИ НОВОЙ ЗАПИСИ В ЦИКЛЕ---------------------------------------
+                    MySqlCommand cmdCycle_ID = connection.CreateCommand();
+                    string sqlCYCLE_ID = "SELECT idCycle_of_works FROM cycle_of_works WHERE Cycle_of_works_Name = '" + TB_Cycle.Text.ToString() + "' ";
+                    cmdCycle_ID.CommandText = sqlCYCLE_ID;
+                    int idCycle = (int)cmdCycle_ID.ExecuteScalar();
 
                     //-----------------------------------------------------------------------------------
+                   
 
-
-                    //-----------------------------------------------------------------------------------
+                    //--------------------------------ДОБАВЛЕНИЕ В МЕЙН---------------------------------------------------
                     MySqlCommand cmdMain = connection.CreateCommand();
-                string sqlMAIN = "INSERT INTO main (Name, Main_info, Age_rate,Comics_Info_id) Values(@Name, @Main_info, @Age_rate, @Comics_Info_id)";
+                string sqlMAIN = "INSERT INTO main (Name, Main_info, Age_rate, Comics_Info_id, Cycle_of_works_id) Values(@Name, @Main_info, @Age_rate, @Comics_Info_id, @Cycle_of_works_id)";
                 cmdMain.CommandText = sqlMAIN;
                 cmdMain.Parameters.AddWithValue("Name", TB_Name.Text);
                 cmdMain.Parameters.AddWithValue("Main_info", TB_Type.Text);
                 cmdMain.Parameters.AddWithValue("Age_rate", TB_AgeRate.Text);
                 cmdMain.Parameters.AddWithValue("Comics_Info_id", idCI);
-                cmdMain.ExecuteNonQuery();
-                //-----------------------------------------------------------------------------------
+                    cmdMain.Parameters.AddWithValue("Cycle_of_works_id", idCycle);
+                    cmdMain.ExecuteNonQuery();
 
+                    //-----------------------------ПОИСК АЙДИ НОВОЙ ЗАПИСИ МЕЙНА------------------------------------------------------
+                    MySqlCommand cmdMain_ID = connection.CreateCommand();
+                    string sqlMAIN_ID = "SELECT idMain FROM main WHERE Name = '" + TB_Name.Text.ToString() + "' ";
+                    cmdMain_ID.CommandText = sqlMAIN_ID;
+                    int idMain = (int)cmdMain_ID.ExecuteScalar();
 
-                connection.Close();
+                    //-----------------------------------------------------------------------------------
+
+                 
+                    foreach (string s in checkedListBox1.CheckedItems.OfType<string>())
+                    {
+                        MySqlCommand cmdGenres = connection.CreateCommand();
+
+                        string sqlGENRES = "INSERT INTO main_has_genre(Main_idMain, Genre_idGenre) Values(@Main, @Genre)";
+                        cmdGenres.CommandText = sqlGENRES;
+                        MySqlCommand cmdGenres_ID = connection.CreateCommand();
+                        string sqlGENRES_ID = "SELECT idGenre FROM genre WHERE Genre_name = '" + s.ToString() + "' ";
+                        cmdGenres_ID.CommandText = sqlGENRES_ID;
+                        int idGenre = (int)cmdGenres_ID.ExecuteScalar();
+
+                        cmdGenres.Parameters.AddWithValue("Main", idMain);
+                        cmdGenres.Parameters.AddWithValue("Genre", idGenre);
+                        cmdGenres.ExecuteNonQuery();
+
+                    }
+                    //-----------------------------------------------------------------------------------
+
+                    connection.Close();
 
             }
 
@@ -347,10 +355,6 @@ namespace WindowsFormsApp2
                 DialogResult dr2 = MessageBox.Show("Данные сохранены!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.None, MessageBoxDefaultButton.Button2);
             };
 
-
-            // }
-
-            //  this.applicationTableAdapter.Insert(;
 
 
         }
