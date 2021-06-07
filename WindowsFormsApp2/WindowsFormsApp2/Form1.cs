@@ -9,12 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
-        int index = -1; 
+        int index = -1;
+
+        public string pathTEMP = @"C:\\Users\\Nastya\\Desktop\\temp\\"; //ОТКУДА
+        public string pathMAIN = @"C:\\Users\\Nastya\\Desktop\\Main\\"; //КУДА
+        public string picFirstIndex = ""; //имя применяемого
+        public string picNewIndex = ""; //имя загружаемого
+
+
         public Form1()
         {
             InitializeComponent();
@@ -31,7 +39,6 @@ namespace WindowsFormsApp2
             this.mainTableAdapter.Fill(this.mydbDataSet.main);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "mydbDataSet.application". При необходимости она может быть перемещена или удалена.
             this.applicationTableAdapter.Fill(this.mydbDataSet.application);
-
         }
 
         private void saveButton_Click(object sender, EventArgs e) // сохранение таблицы заявок
@@ -68,19 +75,9 @@ namespace WindowsFormsApp2
 
         private void AcceptButtAppl_Click(object sender, EventArgs e)
         {
-            // index = applicationDataGridView.CurrentCell.RowIndex; // получает номер записи
-
-            index = applicationDataGridView.CurrentRow.Index;  //принимает номер строки и чтобы по ней искать данные дальше
-
-            //if (index < 0)
-            //{
-            //    DialogResult al = MessageBox.Show("Пожалуйста, выберите запись", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            //}
+            index = applicationDataGridView.CurrentRow.Index;  //принимает номер строки и чтобы по ней искать данные дальше          
 
             tabControl1.SelectedTab = tabControl1.TabPages["TabPage2"]; //переход на вкладку для редакции
-
-            // dataGridView1.FirstDisplayedScrollingRowIndex = index; //открывает первой строкой принятую 
-
 
             TB_AppInd.Text = applicationDataGridView.Rows[index].Cells[0].Value.ToString();     //номер
             TB_Name.Text = applicationDataGridView.Rows[index].Cells[1].Value.ToString();       // название тайтла
@@ -109,17 +106,29 @@ namespace WindowsFormsApp2
             RTB_Authors.Text = applicationDataGridView.Rows[index].Cells[13].Value.ToString();  //авторы
             TB_Cycle.Text = applicationDataGridView.Rows[index].Cells[14].Value.ToString();     //цикл
 
+            string AppIndex = applicationDataGridView.Rows[index].Cells[0].Value.ToString();
+            string picFirstIndex = AppIndex.ToString() + ".jpg";
+            pictureBox2.ImageLocation = pathTEMP + picFirstIndex;
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
 
         }
 
 
         private void applicationDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            index = applicationDataGridView.CurrentRow.Index;
+
+           index = applicationDataGridView.CurrentRow.Index;
+
 
             richTextBox1.Text = applicationDataGridView.Rows[index].Cells[8].Value.ToString();
 
             richTextBox2.Text = applicationDataGridView.Rows[index].Cells[9].Value.ToString();
+
+            string AppIndex = applicationDataGridView.Rows[index].Cells[0].Value.ToString();
+             picFirstIndex = AppIndex.ToString() + ".jpg";
+
+            pictureBox1.ImageLocation = pathTEMP + picFirstIndex;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
@@ -505,9 +514,7 @@ namespace WindowsFormsApp2
                     cmdMain_ID.CommandText = sqlMAIN_ID;
                     int idMain = (int)cmdMain_ID.ExecuteScalar();
 
-                    //--------------------------------ЗАПИСЬ ЖАНРОВ---------------------------------------------------
-
-                 
+                    //--------------------------------ЗАПИСЬ ЖАНРОВ---------------------------------------------------  
                     foreach (string s in checkedListBox1.CheckedItems.OfType<string>())
                     {
                         MySqlCommand cmdGenres = connection.CreateCommand();
@@ -524,7 +531,14 @@ namespace WindowsFormsApp2
                         cmdGenres.ExecuteNonQuery();
 
                     }
+
+                    picNewIndex = idMain.ToString() + ".jpg";
+
+                    
+                   File.Move(pathTEMP + picFirstIndex, pathMAIN + picNewIndex);
+
                     //-----------------------------------------------------------------------------------
+
 
 
                     connection.Close();

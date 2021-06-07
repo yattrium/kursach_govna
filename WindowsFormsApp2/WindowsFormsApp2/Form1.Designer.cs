@@ -46,7 +46,24 @@
             this.deleteButtonAppl = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.applicationDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NextAppButt = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.TB_Editor = new System.Windows.Forms.TextBox();
             this.AddTransButt = new System.Windows.Forms.Button();
@@ -124,23 +141,8 @@
             this.applicationTableAdapter3 = new WindowsFormsApp2.mydbDataSetTableAdapters.applicationTableAdapter();
             this.genreTableAdapter = new WindowsFormsApp2.mydbDataSetTableAdapters.genreTableAdapter();
             this.comics_infoTableAdapter = new WindowsFormsApp2.mydbDataSetTableAdapters.comics_infoTableAdapter();
-            this.NextAppButt = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.mydbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mydbDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mydbDataSetBindingSource1)).BeginInit();
@@ -158,6 +160,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // mydbDataSet
@@ -227,6 +231,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.label16);
             this.tabPage1.Controls.Add(this.richTextBox2);
@@ -352,8 +357,123 @@
             this.applicationDataGridView.TabIndex = 0;
             this.applicationDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.applicationDataGridView_CellClick);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "idApplication";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Номер заявки";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 96;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Application_Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Название";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 82;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Application_type";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Тип";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 51;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Application_link_on_pages";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Ссылка на тайтл";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 82;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Application_wishful_age_rating";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Возр. огр.";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 77;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Application_why_this_rating";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Предупреждения";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 119;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Application_Printed_Edition";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Печатное издание";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Application_Publ_house";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Издательство";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 104;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Application_info_short";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Краткое содержание";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            this.dataGridViewTextBoxColumn9.Width = 127;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Application_info_full";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Информация";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Application_info_year";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Год";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Application_pages";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Стр.";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Width = 53;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Application_genre";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Жанр";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Application_authors";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Авторы";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "Application_cycle_of_works";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Цикл работ";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.NextAppButt);
             this.tabPage2.Controls.Add(this.label22);
@@ -381,6 +501,23 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Редакция заявки";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(880, 503);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(188, 20);
+            this.textBox1.TabIndex = 62;
+            // 
+            // NextAppButt
+            // 
+            this.NextAppButt.Location = new System.Drawing.Point(1026, 638);
+            this.NextAppButt.Name = "NextAppButt";
+            this.NextAppButt.Size = new System.Drawing.Size(240, 65);
+            this.NextAppButt.TabIndex = 61;
+            this.NextAppButt.Text = "Вернуться к заявкам";
+            this.NextAppButt.UseVisualStyleBackColor = true;
+            this.NextAppButt.Click += new System.EventHandler(this.NextAppButt_Click);
             // 
             // label22
             // 
@@ -1030,137 +1167,21 @@
             // 
             this.comics_infoTableAdapter.ClearBeforeFill = true;
             // 
-            // NextAppButt
+            // pictureBox1
             // 
-            this.NextAppButt.Location = new System.Drawing.Point(1026, 638);
-            this.NextAppButt.Name = "NextAppButt";
-            this.NextAppButt.Size = new System.Drawing.Size(240, 65);
-            this.NextAppButt.TabIndex = 61;
-            this.NextAppButt.Text = "Вернуться к заявкам";
-            this.NextAppButt.UseVisualStyleBackColor = true;
-            this.NextAppButt.Click += new System.EventHandler(this.NextAppButt_Click);
+            this.pictureBox1.Location = new System.Drawing.Point(880, 505);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(148, 172);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
-            // dataGridViewTextBoxColumn1
+            // pictureBox2
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "idApplication";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Номер заявки";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 96;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Application_Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Название";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 82;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Application_type";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Тип";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 51;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Application_link_on_pages";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Ссылка на тайтл";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 82;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Application_wishful_age_rating";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Возр. огр.";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 77;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Application_why_this_rating";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Предупреждения";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 119;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Application_Printed_Edition";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Печатное издание";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            this.dataGridViewTextBoxColumn7.Width = 114;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Application_Publ_house";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Издательство";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 104;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Application_info_short";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Краткое содержание";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Visible = false;
-            this.dataGridViewTextBoxColumn9.Width = 127;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Application_info_full";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Информация";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Application_info_year";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Год";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Application_pages";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Стр.";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Width = 53;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Application_genre";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Жанр";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "Application_authors";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Авторы";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "Application_cycle_of_works";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Цикл работ";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(880, 503);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 20);
-            this.textBox1.TabIndex = 62;
+            this.pictureBox2.Location = new System.Drawing.Point(1186, 339);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(344, 227);
+            this.pictureBox2.TabIndex = 63;
+            this.pictureBox2.TabStop = false;
             // 
             // Form1
             // 
@@ -1192,6 +1213,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1309,6 +1332,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
