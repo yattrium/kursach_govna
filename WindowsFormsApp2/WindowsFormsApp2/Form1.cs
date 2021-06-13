@@ -54,24 +54,15 @@ namespace WindowsFormsApp2
                 int a = applicationDataGridView.CurrentRow.Index;
                 applicationDataGridView.Rows.Remove(applicationDataGridView.Rows[a]);
                 //  applicationTableAdapter.Update(mydbDataSet.application); 
+
+                DialogResult dr3 = MessageBox.Show("Пожалуйста, не забудьте сохранить изменения!", "Запись удалена!", MessageBoxButtons.OK, MessageBoxIcon.None, MessageBoxDefaultButton.Button2);
+
+
             }
+
+
         }
 
-        private void deleteButtMain_Click(object sender, EventArgs e) //удаление на мейне
-        {
-            DialogResult dr = MessageBox.Show("Удалить запись?", "Удаление", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            if (dr == DialogResult.OK)
-            {
-                int a = mainDataGridView.CurrentRow.Index;
-                mainDataGridView.Rows.Remove(mainDataGridView.Rows[a]);
-               
-            }
-        }
-
-        private void saveButtMain_Click(object sender, EventArgs e) //сохранение мейна
-        {
-            mainTableAdapter.Update(mydbDataSet.main);
-        }
 
         private void AcceptButtAppl_Click(object sender, EventArgs e)
         {
@@ -150,7 +141,8 @@ namespace WindowsFormsApp2
             Button btn = sender as Button;
             TB_AuthorsR1.Visible = true;
             AddAuthButt.Visible = false;
-            btn.Click -= new EventHandler(button2_Click);
+            DelAuButt.Visible = true;
+           // btn.Click -= new EventHandler(button2_Click);
            // btn.Click += new EventHandler(button2_Click_1);  
 
         }
@@ -173,7 +165,8 @@ namespace WindowsFormsApp2
             Button btn = sender as Button;
             TB_Illu1.Visible = true;
             AddIllusButt.Visible = false;
-            btn.Click -= new EventHandler(AddIllusButt_Click);
+            DelIllButt.Visible = true;
+           // btn.Click -= new EventHandler(AddIllusButt_Click);
           //  btn.Click += new EventHandler(AddIllusButt_Click_1);
         }
 
@@ -195,7 +188,8 @@ namespace WindowsFormsApp2
             Button btn = sender as Button;
             TB_Trans1.Visible = true;
             AddTransButt.Visible = false;
-            btn.Click -= new EventHandler(AddTransButt_Click);
+            DelTransButt.Visible = true;
+           // btn.Click -= new EventHandler(AddTransButt_Click);
           //  btn.Click += new EventHandler(AddTransButt_Click_1); 
         }
 
@@ -211,6 +205,27 @@ namespace WindowsFormsApp2
         //{
         //    TB_Trans3.Visible = true;
         //}
+
+        private void DelAuButt_Click(object sender, EventArgs e)
+        {
+            TB_AuthorsR1.Visible = false;
+            AddAuthButt.Visible = true;
+            DelAuButt.Visible = false;
+        }
+
+        private void DelIllButt_Click(object sender, EventArgs e)
+        {
+            TB_Illu1.Visible = false;
+            AddIllusButt.Visible = true;
+            DelIllButt.Visible = false;
+        }
+
+        private void DelTransButt_Click(object sender, EventArgs e)
+        {
+            TB_Trans1.Visible = false;
+            AddTransButt.Visible = true;
+            DelTransButt.Visible = false;
+        }
 
         private void AcceptApplButt_Click(object sender, EventArgs e)
         {
@@ -562,6 +577,41 @@ namespace WindowsFormsApp2
         private void NextAppButt_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabControl1.TabPages["TabPage1"];
+        }
+
+        private void TB_Name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RTB_Genre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RTB_Authors_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
